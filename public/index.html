@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pokedex">
+<head>
+	<meta name="viewport" content="width=device-width">
+	<title>Pokedex</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body> 
+	<div ng-controller="PokemonController as pkmCtrl">
+		<h1>{{pkmCtrl.pokemon.name}} #{{pkmCtrl.pokemon.id}}</h1>
+		<h2>{{pkmCtrl.pokemon.species}}</h2>
+		<img src="img/pokemons/{{pkmCtrl.pokemon.name| lowercase}}.jpg" alt="bulbasaur">
+		<ul>
+			<li>Type: {{pkmCtrl.pokemon.type.join(', ')}}</li>
+			<li>Weight : {{pkmCtrl.pokemon.weight}}</li>
+			<li>Height : {{pkmCtrl.pokemon.height}}</li>
+			<li>Abilities : {{pkmCtrl.pokemon.abilities.join(',')}}</li>
+		</ul>
+	</div>
+</body>
+</html>
